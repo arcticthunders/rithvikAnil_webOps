@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	.form-control.ng-invalid.ng-dirty{
+		border-color: red;
+	}
+	.form-control.ng-valid.ng-dirty{
+		border-color: green;
+	}
+</style>
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<body>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div style="position: absolute; width:400px ; height: 400px ;left: 65%; top:40%;  background-image:url('/home/rithvik/Downloads/code/saarang.png'); background-size: contain;  background-repeat: no-repeat;"></div>
+<div style="position: absolute; height: 100px; width: 200px; left: 42%; top:5%; background-image:url('/home/rithvik/Downloads/code/title.png'); background-size: contain; "></div>
+
+
+
+<form  ng-app="app" id="form" ng-controller="ctrl" name="form" style="position: absolute; left: 37%; top: 20%;" novalidate >
+             <div class="container-fluid" style="border: 10px; border-color: black;">
+                   <div class="form-group">
+	                  	<label> NAME:</label><br />
+	                  	<input type="text" id="name" name="Name" ng-model="Name" placeholder="Enter your name" class="form-control" style="width: 400px;" autofocus="" required> <br />
+	                </div>
+	                <div class="form-group">
+	                  	 <label>ROLL NUMBER</label><br />
+	               		 <input type="text" id="Rno" name="Rno" ng-model="Rno" placeholder="Enter your RollNo" class="form-control" required> <br/>
+					</div>
+    				<div class="form-group">
+						<label>EMAIL ADDRESS:</label><br />
+						<input type="email" name="email" ng-model="email" placeholder="Enter your email address" class="form-control" required><br />
+					</div>
+						<label>EVENT:</label><br />
+							<select class="form-control" required>
+								<option >event1</option>
+								<option>event2</option>
+								<option>event3</option>
+								<option>event4</option>
+							</select><br />
+
+						<label><b>SEX:</b></label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="sex" value="male">MALE
+								</label>
+								<label>
+									<input type="radio" name="sex" value="female">FEMALE
+      							</label>
+								<label>
+									<input type="radio" name="sex" value="other" checked> OTHER
+						     	</label>  
+	                         </div><br />
+			</div>	
+ <input type="submit" value="Submit" ng-show="form.$valid" onclick="output()">
+</form>
+</body>
+<script>
+	var app=angular.module('app',[]);
+	app.controller('ctrl',function(){});
+	function output(){
+	 var p=prompt("Do you want to submit?");
+	 if((p==="yes")||(p==="Yes"))
+	 {
+       document.getElementById('form').submit();
+	 }
+	 else
+	 {
+	 	window.location.reload();
+	 }
+}
+</script>
+</html>
